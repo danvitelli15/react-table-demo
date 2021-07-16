@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import FeatureExamples from "./pages/featureExamples/FeatureExamples";
+import QuickStart from "./pages/QuickStart";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <div className="App">
+    <Router>
+      <Switch>
+        <Route path="/featureExamples">
+          <FeatureExamples />
+        </Route>
+        <Route path="/">
+          <QuickStart />
+        </Route>
+      </Switch>
+    </Router>
+  </div>
+);
 
 export default App;
